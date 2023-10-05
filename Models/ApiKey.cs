@@ -10,8 +10,8 @@ public class ApiKeyModel
     [Key]
     [StringLength(128)]
     [Column(TypeName = "nvarchar")]
-    string KeyId { get; set; } = default!;
-    bool Status { get; set; } = true;
+    public string KeyId { get; set; } = default!;
+    public bool Status { get; set; } = true;
     [Required]
-    string Permissions { get; set; } = default!;
+    public string Permissions { get; set; } = default!;
 }
