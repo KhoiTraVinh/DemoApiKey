@@ -9,7 +9,7 @@ public class ApiKeyModel
 {
     [Key]
     [StringLength(128)]
-    [Column(TypeName = "nvarchar")]
+    [Column(TypeName = "varchar")]
     public string KeyId { get; set; } = default!;
     public bool Status { get; set; } = true;
     [Required]

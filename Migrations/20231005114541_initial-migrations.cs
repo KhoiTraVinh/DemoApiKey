@@ -14,7 +14,7 @@ namespace ApiKey.Migrations
                 name: "ApiKey",
                 columns: table => new
                 {
-                    KeyId = table.Column<string>(type: "nvarchar", maxLength: 128, nullable: false),
+                    KeyId = table.Column<string>(type: "varchar", maxLength: 128, nullable: false),
                     Status = table.Column<bool>(type: "boolean", nullable: false),
                     Permissions = table.Column<string>(type: "text", nullable: false)
                 },

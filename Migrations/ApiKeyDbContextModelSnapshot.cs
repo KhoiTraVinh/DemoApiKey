@@ -25,7 +25,7 @@ namespace ApiKey.Migrations
                 {
                     b.Property<string>("KeyId")
                         .HasMaxLength(128)
-                        .HasColumnType("nvarchar");
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Permissions")
                         .IsRequired()

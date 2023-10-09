@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace ApiKey.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/key")]
 public class WeatherForecastController : ControllerBase
 {
 
@@ -19,9 +19,17 @@ public class WeatherForecastController : ControllerBase
         _apiKeyDbContext = apiKeyDbContext;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet("GetWeatherForecast")]
     public async Task<IEnumerable<ApiKeyModel>> Get()
     {
         return await _apiKeyDbContext.ApiKeys.ToListAsync();
+    }
+
+    [HttpPost("AddWeatherForecast")]
+    public async Task<ApiKeyModel> Add([FromBody] ApiKeyModel model)
+    {
+        await _apiKeyDbContext.ApiKeys.AddAsync(model);
+        await _apiKeyDbContext.SaveChangesAsync();
+        return model;
     }
 }
