@@ -17,11 +17,13 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
         _apiKeyDbContext = apiKeyDbContext;
+        _logger.LogInformation("WeatherForecast controller called ");
     }
 
     [HttpGet("GetWeatherForecast")]
     public async Task<IEnumerable<ApiKeyModel>> Get()
     {
+        _logger.LogInformation("WeatherForecast get method Starting.");
         return await _apiKeyDbContext.ApiKeys.ToListAsync();
     }
 

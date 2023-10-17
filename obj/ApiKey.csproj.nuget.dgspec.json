@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ApiKey\\ApiKey.csproj": {}
+    "D:\\DemoApiKey\\ApiKey.csproj": {}
   },
   "projects": {
-    "D:\\ApiKey\\ApiKey.csproj": {
+    "D:\\DemoApiKey\\ApiKey.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ApiKey\\ApiKey.csproj",
+        "projectUniqueName": "D:\\DemoApiKey\\ApiKey.csproj",
         "projectName": "ApiKey",
-        "projectPath": "D:\\ApiKey\\ApiKey.csproj",
-        "packagesPath": "C:\\Users\\MSIVN\\.nuget\\packages\\",
-        "outputPath": "D:\\ApiKey\\obj\\",
+        "projectPath": "D:\\DemoApiKey\\ApiKey.csproj",
+        "packagesPath": "C:\\Users\\Techpro\\.nuget\\packages\\",
+        "outputPath": "D:\\DemoApiKey\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MSIVN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Techpro\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,9 +49,17 @@
               "target": "Package",
               "version": "[7.0.11, )"
             },
+            "NetEscapades.AspNetCore.SecurityHeaders": {
+              "target": "Package",
+              "version": "[0.21.0, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[7.0.11, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -78,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
