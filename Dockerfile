@@ -1,19 +1,25 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
 # Copy everything
 COPY *.csproj ./
 # Restore as distinct layers
 RUN dotnet restore
 # Copy everything
 COPY . ./
-# Build and publish a release
-RUN dotnet publish -c Release -o out
+# Build
+RUN dotnet build "ApiKey.csproj" -c Release -o /app/build
+
+# publish a release
+FROM build AS publish
+RUN dotnet publish "ApiKey.csproj" -c Release -o /app/publish
 
 # Build runtime image
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS final-env
+FROM base AS final
 WORKDIR /app
-COPY --from=build-env /app/out .
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "ApiKey.dll"]
