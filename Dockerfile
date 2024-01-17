@@ -13,6 +13,8 @@ RUN dotnet restore
 COPY . ./
 # Build
 RUN dotnet build "ApiKey.csproj" -c Release -o /app/build
+RUN dotnet tool install -g Microsoft.dotnet-httprepl
+RUN dotnet dev-certs https --trust
 
 # publish a release
 FROM build AS publish

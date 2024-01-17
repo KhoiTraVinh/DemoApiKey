@@ -11,7 +11,7 @@ services:
       - "app_db"
     container_name: apikey-services
     ports:
-      - "8088:80"
+      - "8080:80"
     build:
       context: .
       dockerfile: Dockerfile

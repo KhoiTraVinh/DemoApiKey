@@ -1,4 +1,6 @@
 using ApiKey.Data;
+using DSharpPlus;
+using DSharpPlus.Net;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -26,6 +28,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllersWithViews();
+builder.Services.AddHostedService<Worker>();
+builder.Services.AddSingleton<DiscordClient>((serviceProvider) => {
+    var discordClient = new DiscordClient(new DiscordConfiguration {
+        Token = "MTE5NzE0ODc2ODM0NTI3MjQwMA.GMGWvM.YFIMdU6FvvWAta8jh5yVIVs7mpuzBQxPT_goeI",
+        TokenType = TokenType.Bot,
+        Intents = DiscordIntents.All
+    });
+    return discordClient;
+});
 // Cấu hình các HTTP security headers
 // builder.Services.AddCustomSecurityHeaders();
 
